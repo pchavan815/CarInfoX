@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block title %} | EMI CALCULATOR {% endblock %}
+{% block content %}
+
+<!-- Sub banner start -->
+<div class="sub-banner overview-bgi">
+    <div class="container breadcrumb-area">
+        <div class="breadcrumb-areas">
+            <h1>Emi</h1>
+            <ul class="breadcrumbs">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li class="active">Emi</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Sub Banner end -->
+
+<!-- Contact 2 start -->
+<div class="contact-2 content-area-5">
+
+
+
+                <div class="container" >
+                    <div class="main-title text-center">
+            <h1>EMI <span>Calculator</span></h1><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+        </div>
+                <form action="car_emi_calculator" method="get">
+                     <div class="form-group">
+                        <label for="amount">Amount</label>
+                        <input type="text" value="{{ amount }}" class="form-control" id="amount" name="amount" placeholder="Enter the amount">
+                    </div>
+                    <div class="form-group">
+                        <label for="interest">Interest</label>
+                        <input type="text" value="{{ interest }}" class="form-control" id="interest" name="interest" placeholder="Enter the interest">
+                    </div>
+                    <div class="form-group">
+                        <label for="tenure">Tenure</label>
+                        <input type="text" value="{{ tenure }}" class="form-control" id="tenure" name="tenure" placeholder="Enter the tenure">
+                    </div>
+
+                    <h1 style="text-align:center"><button type="submit" name="sub" class="btn btn-primary" >Calculate EMI</button></h1>
+                </form>
+
+                    <div class="alert alert-success font-weight-bold " style="font-size:15px;">
+
+                        The EMI is ₹ {{ emi }}.
+                    </div>
+
+                </div>
+
+
+    </div>
+</div>
+<!-- Contact 2 end -->
+
+
+{% endblock %}
